@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gurukrithikh | CSE (AI & ML) Student & Developer Portfolio</title>
+  <meta name="description"
+    content="Personal portfolio of Gurukrithikh, B.Tech Computer Science and Engineering (AI & ML) student at SRM Institute of Science and Technology. Aspiring Full-Stack & Machine Learning Developer.">
+  <meta name="keywords"
+    content="Gurukrithikh, SRMIST, Computer Science, Machine Learning, Full-Stack Developer, AI, Python, Java, Portfolio">
+  <meta name="author" content="Gurukrithikh">
+
+  <!-- OpenGraph Social Tags -->
+  <meta property="og:title" content="Gurukrithikh | Portfolio">
+  <meta property="og:description"
+    content="CSE (AI & ML) Student at SRM Institute of Science and Technology | Aspiring Full-Stack & Machine Learning Developer">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Full-Screen Animated Landing Intro -->
+  <div class="intro-screen" id="introScreen" role="dialog" aria-label="Intro Screen">
+    <button class="skip-intro-btn" id="skipIntroBtn">
+      Skip Intro <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <div class="intro-bg" aria-hidden="true">
+      <canvas id="introCanvas"></canvas>
+      <div class="intro-grid-overlay"></div>
+    </div>
+
+    <div class="intro-content">
+      <h1 class="intro-title" id="introTitle" aria-label="PORTFOLIO">
+        <span class="intro-letter">P</span>
+        <span class="intro-letter">O</span>
+        <span class="intro-letter">R</span>
+        <span class="intro-letter">T</span>
+        <span class="intro-letter">F</span>
+        <span class="intro-letter">O</span>
+        <span class="intro-letter">L</span>
+        <span class="intro-letter">I</span>
+        <span class="intro-letter">O</span>
+      </h1>
+
+      <div class="intro-glow-line" id="introGlowLine"></div>
+
+      <h2 class="intro-subtitle" id="introSubtitle">
+        Gurukrithikh Balakrishnan
+      </h2>
+
+      <button class="intro-enter-btn" id="enterBtn" aria-label="Enter Portfolio Website">
+        <span>Enter Portfolio</span>
+        <div class="btn-arrow-down"><i class="fas fa-chevron-down"></i></div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Ambient Glowing Background Elements -->
+  <div class="bg-decorations" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <!-- Header & Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Gurukrithikh Home">
+        <div class="logo-badge">GK</div>
+        <div class="logo-text">Gurukrithikh<span>.dev</span></div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#activities" class="nav-link">Activities</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content reveal">
+            <div class="hero-status-badge">
+              <span class="pulse-dot"></span>
+              <span>SRMIST • B.Tech CSE (AI & ML) Student</span>
+            </div>
+
+            <h1 class="hero-name">
+              Hi, I'm <span class="name-gradient">Gurukrithikh</span>
+            </h1>
+
+            <div class="hero-title">
+              CSE (AI & ML) Student
+              <span class="title-tag">Aspiring Full-Stack & ML Developer</span>
+            </div>
+
+            <p class="hero-intro">
+              I’m a Computer Science student passionate about building practical software and exploring machine
+              learning.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                <i class="fas fa-code-branch"></i> View Projects
+              </a>
+              <a href="https://github.com/gurukrithikh-b" target="_blank" rel="noopener noreferrer"
+                class="btn btn-secondary">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/gurukrithikh-balakrishnan-49a39428a/" target="_blank"
+                rel="noopener noreferrer" class="btn btn-secondary">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+            </div>
+
+            <div class="hero-quick-highlights">
+              <div class="highlight-item">
+                <span class="highlight-val">2024–Present</span>
+                <span class="highlight-lbl">SRMIST Chennai</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-val">AI & ML</span>
+                <span class="highlight-lbl">Specialization</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-val">13+</span>
+                <span class="highlight-lbl">Certifications</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-portrait-wrapper reveal">
+            <div class="hero-portrait-blend">
+              <div class="hero-portrait-glow" aria-hidden="true"></div>
+              <img src="assets/hero_portrait_original.png" alt="Gurukrithikh Balakrishnan" class="hero-portrait-img"
+                loading="eager">
+              <div class="hero-portrait-vignette" aria-hidden="true"></div>
+            </div>
+
+            <div class="floating-glass-card card-top-right">
+              <div class="floating-icon icon-blue">
+                <i class="fas fa-brain"></i>
+              </div>
+              <div class="floating-info">
+                <h4>AI & Machine Learning</h4>
+                <p>Predictive Modeling & Risk Systems</p>
+              </div>
+            </div>
+
+            <div class="floating-glass-card card-bottom-left">
+              <div class="floating-icon icon-purple">
+                <i class="fas fa-layer-group"></i>
+              </div>
+              <div class="floating-info">
+                <h4>Software Engineering</h4>
+                <p>Java, Python, Databases & Web</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. About Section -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag"><i class="fas fa-user-circle"></i> 01. ABOUT ME</span>
+          <h2 class="section-title">Background & Passions</h2>
+          <p class="section-subtitle">A glimpse into my academic journey and technical interests.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card reveal">
+            <p class="about-text">
+              I am pursuing <strong>B.Tech in Computer Science and Engineering with a specialization in Artificial
+                Intelligence and Machine Learning</strong> at <strong>SRM Institute of Science and Technology</strong>.
+              I enjoy solving real-world problems through software, with interests in full-stack development, databases,
+              Java, Python, and machine learning.
+            </p>
+          </div>
+
+          <div class="about-highlights-grid reveal">
+            <div class="focus-box">
+              <div class="focus-icon"><i class="fas fa-laptop-code"></i></div>
+              <div class="focus-info">
+                <h3>Full-Stack Engineering</h3>
+                <p>Building clean desktop and responsive web user interfaces backed by structured database models.</p>
+              </div>
+            </div>
+
+            <div class="focus-box">
+              <div class="focus-icon"><i class="fas fa-robot"></i></div>
+              <div class="focus-info">
+                <h3>Machine Learning</h3>
+                <p>Exploring predictive algorithms, risk evaluation models, and data analytics pipelines.</p>
+              </div>
+            </div>
+
+            <div class="focus-box">
+              <div class="focus-icon"><i class="fas fa-database"></i></div>
+              <div class="focus-info">
+                <h3>Database Management</h3>
+                <p>Designing efficient relational (MySQL) and document (MongoDB) database architectures.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Skills Section -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag"><i class="fas fa-tools"></i> 02. SKILLS & TECH</span>
+          <h2 class="section-title">Technical Proficiency</h2>
+          <p class="section-subtitle">Languages, frameworks, and database technologies I work with.</p>
+        </div>
+
+        <div class="skills-filters reveal">
+          <button class="filter-btn active" data-filter="all">All Skills</button>
+          <button class="filter-btn" data-filter="programming">Programming</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="backend">Backend</button>
+          <button class="filter-btn" data-filter="databases">Databases</button>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Programming -->
+          <div class="skill-card reveal" data-category="programming">
+            <div class="skill-icon-wrapper"><i class="devicon-python-plain colored"></i></div>
+            <div class="skill-info">
+              <div class="skill-name">Python</div>
+              <div class="skill-category">Programming</div>
+            </div>
+          </div>
+
+          <div class="skill-card reveal" data-category="programming">
+            <div class="skill-icon-wrapper"><i class="devicon-java-plain colored"></i></div>
+            <div class="skill-info">
+              <div class="skill-name">Java</div>
+              <div class="skill-category">Programming</div>
+            </div>
+          </div>
+
+          <div class="skill-card reveal" data-category="programming">
+            <div class="skill-icon-wrapper"><i class="devicon-cplusplus-plain colored"></i></div>
+            <div class="skill-info">
+              <div class="skill-name">C++</div>
+              <div class="skill-category">Programming</div>
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="skill-card reveal" data-category="frontend">
+            <div class="skill-icon-wrapper"><i class="devicon-html5-plain colored"></i></div>
+            <div class="skill-info">
+              <div class="skill-name">HTML</div>
+              <div class="skill-category">Frontend</div>
+            </div>
+          </div>
+
+          <div class="skill-card reveal" data-category="frontend">
+            <div class="skill-icon-wrapper"><i class="devicon-css3-plain colored"></i></div>
+            <div class="skill-info">
+              <div class="skill-name">CSS</div>
+              <div class="skill-category">Frontend</div>
+            </div>
+          </div>
+
+          <div class="skill-card reveal" data-category="frontend">
+            <div class="skill-icon-wrapper"><i class="devicon-javascript-plain colored"></i></div>
+            <div class="skill-info">
+              <div class="skill-name">JavaScript</div>
+              <div class="skill-category">Frontend</div>
+            </div>
+          </div>
+
+          <div class="skill-card reveal" data-category="frontend">
+            <div class="skill-icon-wrapper"><i class="devicon-react-original colored"></i></div>
+            <div class="skill-info">
+              <div class="skill-name">React.js</div>
+              <div class="skill-category">Frontend</div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="skill-card reveal" data-category="backend">
+            <div class="skill-icon-wrapper"><i class="devicon-nodejs-plain colored"></i></div>
+            <div class="skill-info">
+              <div class="skill-name">Node.js</div>
+              <div class="skill-category">Backend</div>
+            </div>
+          </div>
+
+          <div class="skill-card reveal" data-category="backend">
+            <div class="skill-icon-wrapper"><i class="devicon-express-original colored"></i></div>
+            <div class="skill-info">
+              <div class="skill-name">Express.js</div>
+              <div class="skill-category">Backend</div>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="skill-card reveal" data-category="databases">
+            <div class="skill-icon-wrapper"><i class="devicon-mysql-plain colored"></i></div>
+            <div class="skill-info">
+              <div class="skill-name">MySQL</div>
+              <div class="skill-category">Databases</div>
+            </div>
+          </div>
+
+          <div class="skill-card reveal" data-category="databases">
+            <div class="skill-icon-wrapper"><i class="devicon-mongodb-plain colored"></i></div>
+            <div class="skill-info">
+              <div class="skill-name">MongoDB</div>
+              <div class="skill-category">Databases</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Projects Section -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag"><i class="fas fa-folder-open"></i> 03. PROJECTS</span>
+          <h2 class="section-title">Featured Software Projects</h2>
+          <p class="section-subtitle">Real-world applications and machine learning implementations.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card reveal">
+            <div class="project-img-wrapper">
+              <img src="assets/inventory_project.png" alt="Inventory Management System Dashboard Mockup" loading="lazy">
+              <span class="project-badge">Software System</span>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Inventory Management System</h3>
+              <div class="project-tags">
+                <span class="tech-tag">JavaFX</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">MySQL</span>
+              </div>
+              <p class="project-desc">
+                Built a system to track, control, and optimize business inventory and stock levels. Contributed to
+                backend development using Python and MySQL and supported frontend component integration with JavaFX.
+              </p>
+              <div class="project-actions">
+                <button class="btn btn-primary btn-sm view-project-details" data-project="inventory">
+                  <i class="fas fa-info-circle"></i> System Details
+                </button>
+                <a href="https://github.com/gurukrithikh-b" target="_blank" rel="noopener noreferrer"
+                  class="btn btn-secondary btn-sm">
+                  <i class="fab fa-github"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- 5. Experience Section -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag"><i class="fas fa-briefcase"></i> 04. EXPERIENCE</span>
+          <h2 class="section-title">
+            Experience <span class="student-badge"><i class="fas fa-user-graduate"></i> Third-Year Student</span>
+          </h2>
+          <p class="section-subtitle">Contributing to student life through operations, coordination, and resource
+            management.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Featured Timeline Item -->
+          <div class="timeline-item reveal">
+            <div class="timeline-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <h3 class="degree-title">Committee Head — Operations & Resource Management</h3>
+                <span class="timeline-period">Present</span>
+              </div>
+              <div class="institution-name">Directorate of Student Affairs (DSA), SRM Institute of Science and
+                Technology, Kattankulathur</div>
+              <p class="timeline-desc">
+                Currently serving as a Committee Head in the Operations & Resource Management domain. I help coordinate
+                student activities, manage operational requirements, support resource planning, and contribute to the
+                smooth execution of campus events and initiatives.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Certifications Section -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag"><i class="fas fa-certificate"></i> 05. CERTIFICATIONS</span>
+          <h2 class="section-title">Courses & Verified Credentials</h2>
+          <p class="section-subtitle">Categorized professional certifications, virtual internships, and course
+            credentials.</p>
+        </div>
+
+        <div class="cert-categories-wrapper">
+          <!-- Category 1: AI, Machine Learning & Data -->
+          <div class="cert-category-block reveal">
+            <h3 class="cert-category-title"><i class="fas fa-brain"></i> AI, Machine Learning & Data</h3>
+            <div class="cert-grid">
+              <div class="cert-card">
+                <div class="cert-badge-icon"><i class="fas fa-robot"></i></div>
+                <div class="cert-info">
+                  <h4>Machine Learning</h4>
+                  <div class="cert-issuer">Udemy</div>
+                  <div class="cert-date"><i class="far fa-calendar-alt"></i> August 2026</div>
+                </div>
+              </div>
+
+              <div class="cert-card">
+                <div class="cert-badge-icon"><i class="fas fa-network-wired"></i></div>
+                <div class="cert-info">
+                  <h4>AI-ML Virtual Internship</h4>
+                  <div class="cert-issuer">AICTE / EduSkills</div>
+                  <div class="cert-date"><i class="far fa-calendar-alt"></i> April–June 2026</div>
+                </div>
+              </div>
+
+              <div class="cert-card">
+                <div class="cert-badge-icon"><i class="fas fa-microchip"></i></div>
+                <div class="cert-info">
+                  <h4>AI Fundamentals: Foundations for Understanding AI</h4>
+                  <div class="cert-issuer">IBM SkillsBuild</div>
+                  <div class="cert-date"><i class="far fa-calendar-alt"></i> August 2026</div>
+                </div>
+              </div>
+
+              <div class="cert-card">
+                <div class="cert-badge-icon"><i class="fas fa-chart-bar"></i></div>
+                <div class="cert-info">
+                  <h4>Data Analytics Job Simulation</h4>
+                  <div class="cert-issuer">Deloitte / Forage</div>
+                  <div class="cert-date"><i class="far fa-calendar-alt"></i> April 2026</div>
+                </div>
+              </div>
+
+              <div class="cert-card">
+                <div class="cert-badge-icon"><i class="fas fa-magic"></i></div>
+                <div class="cert-info">
+                  <h4>Generative AI for All</h4>
+                  <div class="cert-issuer">Infosys Springboard</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Cloud & Web Development -->
+          <div class="cert-category-block reveal">
+            <h3 class="cert-category-title"><i class="fas fa-cloud"></i> Cloud & Web Development</h3>
+            <div class="cert-grid">
+              <div class="cert-card">
+                <div class="cert-badge-icon"><i class="fab fa-aws"></i></div>
+                <div class="cert-info">
+                  <h4>IoT Cloud Engineer Virtual Internship</h4>
+                  <div class="cert-issuer">AICTE / EduSkills with AWS Skill Builder</div>
+                  <div class="cert-date"><i class="far fa-calendar-alt"></i> June–August 2026</div>
+                </div>
+              </div>
+
+              <div class="cert-card">
+                <div class="cert-badge-icon"><i class="fas fa-code"></i></div>
+                <div class="cert-info">
+                  <h4>Front End Web Developer Certification</h4>
+                  <div class="cert-issuer">Infosys Springboard</div>
+                  <div class="cert-date"><i class="far fa-calendar-alt"></i> August 2026</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Computer Science -->
+          <div class="cert-category-block reveal">
+            <h3 class="cert-category-title"><i class="fas fa-laptop-code"></i> Computer Science</h3>
+            <div class="cert-grid">
+              <div class="cert-card">
+                <div class="cert-badge-icon"><i class="fas fa-database"></i></div>
+                <div class="cert-info">
+                  <h4>Database Management System</h4>
+                  <div class="cert-issuer">NPTEL</div>
+                  <div class="cert-date"><i class="far fa-calendar-alt"></i> January–March 2026</div>
+                </div>
+              </div>
+
+              <div class="cert-card">
+                <div class="cert-badge-icon"><i class="fas fa-cubes"></i></div>
+                <div class="cert-info">
+                  <h4>Fundamentals of Object-Oriented Programming</h4>
+                  <div class="cert-issuer">NPTEL</div>
+                </div>
+              </div>
+
+              <div class="cert-card">
+                <div class="cert-badge-icon"><i class="fas fa-terminal"></i></div>
+                <div class="cert-info">
+                  <h4>Introduction to Operating Systems</h4>
+                  <div class="cert-issuer">NPTEL</div>
+                </div>
+              </div>
+
+              <div class="cert-card">
+                <div class="cert-badge-icon"><i class="fab fa-java"></i></div>
+                <div class="cert-info">
+                  <h4>Programming in Java</h4>
+                  <div class="cert-issuer">NPTEL</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Professional Skills -->
+          <div class="cert-category-block reveal">
+            <h3 class="cert-category-title"><i class="fas fa-lightbulb"></i> Professional Skills</h3>
+            <div class="cert-grid">
+              <div class="cert-card">
+                <div class="cert-badge-icon"><i class="fas fa-brain"></i></div>
+                <div class="cert-info">
+                  <h4>Introduction to Critical Thinking and Logic</h4>
+                  <div class="cert-issuer">Saylor Academy</div>
+                  <div class="cert-date"><i class="far fa-calendar-alt"></i> April 2026</div>
+                </div>
+              </div>
+
+              <div class="cert-card">
+                <div class="cert-badge-icon"><i class="fas fa-file-excel"></i></div>
+                <div class="cert-info">
+                  <h4>Introduction to MS Excel</h4>
+                  <div class="cert-issuer">Microsoft</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Activities Section -->
+    <section class="section" id="activities">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag"><i class="fas fa-award"></i> 06. ACTIVITIES</span>
+          <h2 class="section-title">Co-Curricular & Events</h2>
+          <p class="section-subtitle">Hackathons, engineering challenges, and competitions.</p>
+        </div>
+
+        <div class="activities-wrapper reveal">
+          <div class="activity-card">
+            <div class="activity-icon-badge">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <div class="activity-details">
+              <div class="activity-role">Participant</div>
+              <h3 class="activity-name">AppXcelerate 1.0 – 24-Hour Appathon</h3>
+              <div class="activity-org"><i class="fas fa-university"></i> SRM Institute of Science and Technology</div>
+              <div class="activity-date"><i class="far fa-calendar-alt"></i> March 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Contact Section -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-header reveal">
+          <span class="section-tag"><i class="fas fa-paper-plane"></i> 07. GET IN TOUCH</span>
+          <h2 class="contact-headline">Let's build something great.</h2>
+          <p class="contact-sub">
+            Have an idea, a role, or a collaboration in mind? Drop me a message below or reach out directly — my inbox
+            is always open.
+          </p>
+        </div>
+
+        <div class="contact-grid reveal">
+          <!-- Left Column: Contact Form -->
+          <form class="contact-form-card" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName" class="form-label">NAME</label>
+                <input type="text" id="contactName" class="form-input" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">EMAIL</label>
+                <input type="email" id="contactEmail" class="form-input" placeholder="you@example.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactSubject" class="form-label">SUBJECT</label>
+              <input type="text" id="contactSubject" class="form-input" placeholder="What's this about?" required>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage" class="form-label">MESSAGE</label>
+              <textarea id="contactMessage" class="form-textarea"
+                placeholder="Tell me about your project, role, or idea..." rows="4" required></textarea>
+            </div>
+            <div class="form-action">
+              <button type="submit" class="btn-send-message">
+                Send message <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+
+          <!-- Right Column: Direct Info Cards -->
+          <div class="contact-cards-column">
+            <!-- Email -->
+            <a href="mailto:b.gurukrithik@gmail.com" class="contact-card-item">
+              <div class="contact-card-left">
+                <div class="contact-card-icon"><i class="far fa-envelope"></i></div>
+                <div class="contact-card-text">
+                  <span class="contact-card-label">EMAIL</span>
+                  <span class="contact-card-value">b.gurukrithik@gmail.com</span>
+                </div>
+              </div>
+              <i class="fas fa-arrow-up-right-from-square contact-card-arrow"></i>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/gurukrithikh-b" target="_blank" rel="noopener noreferrer"
+              class="contact-card-item">
+              <div class="contact-card-left">
+                <div class="contact-card-icon"><i class="fab fa-github"></i></div>
+                <div class="contact-card-text">
+                  <span class="contact-card-label">GITHUB</span>
+                  <span class="contact-card-value">github.com/gurukrithikh-b</span>
+                </div>
+              </div>
+              <i class="fas fa-arrow-up-right-from-square contact-card-arrow"></i>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/gurukrithikh-balakrishnan-49a39428a/" target="_blank"
+              rel="noopener noreferrer" class="contact-card-item">
+              <div class="contact-card-left">
+                <div class="contact-card-icon"><i class="fab fa-linkedin-in"></i></div>
+                <div class="contact-card-text">
+                  <span class="contact-card-label">LINKEDIN</span>
+                  <span class="contact-card-value">linkedin.com/in/gurukrithikh-b</span>
+                </div>
+              </div>
+              <i class="fas fa-arrow-up-right-from-square contact-card-arrow"></i>
+            </a>
+
+            <!-- Response Time Box -->
+            <div class="response-time-box">
+              <span class="response-time-label">RESPONSE TIME</span>
+              <p class="response-time-text">
+                I usually reply within 24–48 hours. For urgent things, email is fastest.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-text">
+        Built by <strong>Gurukrithikh</strong>. CSE (AI & ML) Student • SRMIST
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://github.com/gurukrithikh-b" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+          aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/gurukrithikh-balakrishnan-49a39428a/" target="_blank"
+          rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:b.gurukrithik@gmail.com" class="social-icon-btn" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Interactive Project Details Modal -->
+  <div class="modal-overlay" id="projectModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Close Modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3 class="project-title" id="modalTitle" style="margin-bottom: 16px;">Project Architecture</h3>
+      <div id="modalBody">
+        <!-- Dynamic Content injected by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div class="toast-notification" id="toast">
+    <i class="fas fa-check-circle" style="color: #10b981;"></i>
+    <span class="toast-msg">Action completed</span>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>
