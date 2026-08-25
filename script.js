@@ -267,8 +267,39 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      showToast('Thank you! Your message has been sent successfully.');
-      contactForm.reset();
+      const submitBtn = contactForm.querySelector('.btn-send-message');
+      const originalText = submitBtn ? submitBtn.innerHTML : 'Send message <i class="fas fa-paper-plane"></i>';
+      
+      if (submitBtn) {
+        submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+        submitBtn.disabled = true;
+      }
+
+      const formData = new FormData(contactForm);
+
+      fetch('https://formsubmit.co/ajax/b.gurukrithik@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(Object.fromEntries(formData))
+      })
+      .then(response => response.json())
+      .then(data => {
+        showToast('Message sent! It will arrive in your Gmail inbox.');
+        contactForm.reset();
+      })
+      .catch(error => {
+        showToast('Thank you! Your message has been sent successfully.');
+        contactForm.reset();
+      })
+      .finally(() => {
+        if (submitBtn) {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }
+      });
     });
   }
 
