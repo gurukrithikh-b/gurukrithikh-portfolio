@@ -164,25 +164,53 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('mobile-open');
+    const toggleMenu = (open) => {
+      const isOpen = open !== undefined ? open : !navMenu.classList.contains('mobile-open');
+      navMenu.classList.toggle('mobile-open', isOpen);
+      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      
       const icon = mobileToggle.querySelector('i');
       if (icon) {
-        if (navMenu.classList.contains('mobile-open')) {
-          icon.className = 'fas fa-times';
-        } else {
-          icon.className = 'fas fa-bars';
-        }
+        icon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+      }
+
+      // Prevent body scrolling when mobile menu is open
+      if (window.innerWidth <= 992) {
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+    };
+
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    // Close menu when a link is clicked
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        toggleMenu(false);
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('mobile-open') && !navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+        toggleMenu(false);
       }
     });
 
-    // Close menu when link clicked
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('mobile-open');
-        const icon = mobileToggle.querySelector('i');
-        if (icon) icon.className = 'fas fa-bars';
-      });
+    // Close menu on Escape key press
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('mobile-open')) {
+        toggleMenu(false);
+      }
+    });
+
+    // Reset overflow style on window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 992 && navMenu.classList.contains('mobile-open')) {
+        toggleMenu(false);
+      }
     });
   }
 
